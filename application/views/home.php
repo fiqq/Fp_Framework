@@ -1,38 +1,26 @@
 <!-- Dashboard Admin -->
 <?php if ($user['level']==1) {  ?>
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-    <h2>Data Admin</h2>
-  </div>
 
-  <div class="row mt-4">
-    <div class="ml-3">
-      <img width="100px" height="100px" src="<?php echo base_url('assets/images/logo.png')?>" alt="">
-      <div class="mt-3">
-        <strong>
-          <?php echo $user['nama']; ?>  
-        </strong>
+<div class="row mt-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        Panduan Awal 
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Mohon Dibaca</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">1. Dashboard, adalah menu untuk menampilkan kegiatan, berita , dl</li>
+          <li class="list-group-item">2. Agenda adalah menu untuk mengelola Kegiatan yang ditawarkan.</li>
+          <li class="list-group-item">3. Data Mahasiswa adalah menu untuk menampilkan data mahasiswa pada Fakultas terkait termasuk data KRK dan data KHK dari mahasiswa terpilih.</li>
+          <li class="list-group-item">4. Validasi KRK adalah menu bagi Admin untuk memvalidasi KRK yang diajukan oleh mahasiswa pada periode berjalan</li>
+          <li class="list-group-item">5. Validasi KHK adalah menu bagi Admin untuk memvalidasi KHK mahasiswa atas sertifikat yang telah diupload oleh mahasiswa.</li>
+          <li class="list-group-item">6. Daftar Prestasi adalah menu untuk menampilkan total kumpulan poin dari mahasiswa dengan filter Prodi dalam urutan mulai yang terbanyak</li>
+        </ul>
       </div>
     </div>
-      <div class="col">
-          <div class="col">
-              <table class="table-striped table table-bordered">
-                  <tr>
-                      <td>Nama</td>
-                      <td><?php echo $user['nama']; ?></td>
-                      <td>Email</td>
-                      <td><?php echo $user['email']; ?></td>
-                  </tr>
-                  <tr>
-                      <td>Status</td>
-                      <td>Aktif</td>
-                      <td>Jabatan</td>
-                      <td>Admin 1</td>
-                  </tr>
-                  
-              </table>
-          </div>
-      `</div>
   </div>
+</div>
 
 <?php }?>
 <!-- End Dashboard Admin -->
@@ -40,7 +28,26 @@
 
 <!-- Dashboard Guru -->
 <?php if ($user['level']==2) {  ?>
-
+  <div class="row mt-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        Panduan Awal 
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Mohon Dibaca</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">1. Dashboard, adalah menu untuk menampilkan kegiatan, berita , dl</li>
+          <li class="list-group-item">2. Agenda adalah menu untuk mengelola Kegiatan yang ditawarkan.</li>
+          <li class="list-group-item">3. Data Mahasiswa adalah menu untuk menampilkan data mahasiswa pada Fakultas terkait termasuk data KRK dan data KHK dari mahasiswa terpilih.</li>
+          <li class="list-group-item">4. Validasi KRK adalah menu bagi Admin untuk memvalidasi KRK yang diajukan oleh mahasiswa pada periode berjalan</li>
+          <li class="list-group-item">5. Validasi KHK adalah menu bagi Admin untuk memvalidasi KHK mahasiswa atas sertifikat yang telah diupload oleh mahasiswa.</li>
+          <li class="list-group-item">6. Daftar Prestasi adalah menu untuk menampilkan total kumpulan poin dari mahasiswa dengan filter Prodi dalam urutan mulai yang terbanyak</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php }?>
 <!-- End Dashboard Guru -->
@@ -53,8 +60,8 @@
 
           <div class="row mt-4">
           <div class="ml-3">
-            <img width="100px" height="100px" src="<?php echo base_url('assets/images/logo.png')?>" alt="">
-            <div class="mt-3">
+            <img width="80%" height="80%"  src="<?php echo base_url()?>uploads/<?php echo $students['fotopath'] ?>" alt="">
+            <div class="mt-3 ml-4">
               <strong>
                 <?php echo $students['nama']; ?>  
               </strong>

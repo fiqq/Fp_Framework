@@ -8,10 +8,16 @@
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Dashboard Template · Bootstrap</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/"> -->
+    <link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/dashboard.css')?>" rel="stylesheet">
 
+    <script src="<?= base_url('assets/js/jquery-3.5.1.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/js/sweetalert2.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/js/dashboard.js') ?>"></script>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/sweetalert2.min.css') ?>">
     <!-- Bootstrap core CSS -->
-<link href="<?php echo base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
+
 
     <style>
       .bd-placeholder-img {
@@ -30,12 +36,12 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="<?php echo base_url('assets/css/dashboard.css')?>" rel="stylesheet">
+
   </head>
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="<?php echo base_url(); ?>C_home">SIAMIK FRAMEWORK</a>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenus" aria-controls="sidebarMenus" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
@@ -48,7 +54,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav id="sidebarMenus" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
 
@@ -58,58 +64,74 @@
                 <img width="100px" height="100px" src="<?php echo base_url('assets/images/logo.png')?>" alt="">
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="<?php echo base_url() ?>">
-                  <span data-feather="home"></span>
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_home"){echo "active";}?>" href="<?php echo base_url('C_home') ?>">
                   Dashboard <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="<?php echo base_url('C_home/datasiswa') ?>">
-                  <span data-feather="home"></span>
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_siswa"){echo "active";}?>" href="<?php echo base_url('C_home/datasiswa') ?>">
                   Data Siswa <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="<?php echo base_url() ?>">
-                  <span data-feather="home"></span>
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_guru"){echo "active";}?>" href="<?php echo base_url('C_guru') ?>">
                   Data Guru <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
-                  <span data-feather="home"></span>
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_kelas"){echo "active";}?>" href="<?php echo base_url('C_kelas') ?>">
+                  Data Kelas <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_transkip"){echo "active";}?>" href="<?php echo base_url('C_transkip') ?>">
                   Transkip Nilai
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
-                  <span data-feather="home"></span>
-                  Jadwal Mapel
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">
-                  <span data-feather="home"></span>
-                  Ujian
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">
-                  <span data-feather="home"></span>
-                  Tugas
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">
-                  <span data-feather="home"></span>
-                  Absensi Harian
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_mapel"){echo "active";}?>" href="<?php echo base_url('C_mapel') ?>">
+                   Mapel
                 </a>
               </li>
             <?php }?>
             <!-- End Admin Sidebar -->
 
             <!-- Guru Sidebar -->
-
+            <?php if ($user['level']==2) {  ?>
+              <li style="margin-left: 25%; margin-bottom: 20px;">
+                <img width="100px" height="100px" src="<?php echo base_url('assets/images/logo.png')?>" alt="">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_home"){echo "active";}?>" href="<?php echo base_url('C_home') ?>">
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_siswa"){echo "active";}?>" href="<?php echo base_url('C_home/datasiswa') ?>">
+                  Data Siswa <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_guru"){echo "active";}?>" href="<?php echo base_url('C_guru') ?>">
+                  Data Guru <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_kelas"){echo "active";}?>" href="<?php echo base_url('C_kelas') ?>">
+                  Data Kelas <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_transkip"){echo "active";}?>" href="<?php echo base_url('C_transkip') ?>">
+                  Transkip Nilai
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_mapel"){echo "active";}?>" href="<?php echo base_url('C_mapel') ?>">
+                   Mapel
+                </a>
+              </li>
+            <?php }?>
 
             <!-- End Guru Sidebar  -->
 
@@ -120,39 +142,32 @@
                 <img width="100px" height="100px" src="<?php echo base_url('assets/images/logo.png')?>" alt="">
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="<?php echo base_url() ?>">
+              <a class="nav-link <?php if($this->uri->segment(1)=="C_home"){echo "active";}?>" href="<?php echo base_url('C_home') ?>">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_transkip"){echo "active";}?>" href="<?php echo base_url('C_transkip') ?>">
                   <span data-feather="home"></span>
                   Transkip Nilai
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_mapel"){echo "active";}?>" href="<?php echo base_url('C_mapel') ?>">
                   <span data-feather="home"></span>
-                  Jadwal Mapel
+                  Mapel
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_siswa"){echo "active";}?>" href="<?php echo base_url('C_siswa') ?>">
                   <span data-feather="home"></span>
-                  Ujian
+                  Data Siswa
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">
-                  <span data-feather="home"></span>
-                  Tugas
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">
-                  <span data-feather="home"></span>
-                  Absensi Harian
+                <a class="nav-link <?php if($this->uri->segment(1)=="C_kelas"){echo "active";}?>" href="<?php echo base_url('C_kelas') ?>">
+                  Data Kelas <span class="sr-only">(current)</span>
                 </a>
               </li>
             <?php }?>
@@ -188,8 +203,9 @@
               <a href="#">
                 <span data-feather="calendar"></span>
                
-                <?php if ($user['level']== 3) { echo $students['nama']; }  ?>
+                <?php if ($user['level']== 3) { echo $user['nama']; }  ?>
                 <?php if ($user['level']== 1) { echo $user['nama']; }  ?>
+                <?php if ($user['level']== 2) { echo $user['nama']; }  ?>
               </a>
             </button>
         </div>
@@ -201,9 +217,44 @@
     </main>
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-        <script src="./assets/js/dashboard.js"></script></body>
+<script>
+        $(document).on('click','#deleteguru', function(event){
+            event.preventDefault();
+            const href = $(this).attr('href');
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Data Ini akan Dihapus",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Hapus!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location = href;
+                }
+            })
+        });
+    </script>
+    <script>
+        $(document).on('click','#delete', function(event){
+            event.preventDefault();
+            const href = $(this).attr('href');
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Data Ini akan Dihapus",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Hapus!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location = href;
+                }
+            })
+        });
+    </script>
 </html>

@@ -6,6 +6,6 @@ class M_students extends CI_Model {
     }
 
     public function getById($id){
-        return $this->db->get_where('students', ["id" => $id])->row();
+        return $this->db->get_where('students', ["nama" => $id])->row_array();
     }
 }

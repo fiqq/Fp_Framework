@@ -11,8 +11,8 @@ class C_home extends CI_Controller {
 	public function index()
 	{
         $data['user'] = $this->db->get_where('users',['email' => $this->session->userdata('email')])->row_array();
-        $data['masyarakat'] = $this->M_masyarakat->get_data();
-        $data['students'] = $this->db->get_where('students',[ 'id' => $this->session->userdata('id_user')])->row_array();
+        // $data['masyarakat'] = $this->M_masyarakat->get_data();
+        $data['students'] = $this->db->get_where('students',[ 'user_id' => $this->session->userdata('id_user')])->row_array();
 		
         if ($this->session->userdata('email')) {
             $this->template->load('template', 'home', $data);
@@ -22,10 +22,8 @@ class C_home extends CI_Controller {
 	}
 
     public function datasiswa(){
-        $data['user'] = $this->db->get_where('users',['email' => $this->session->userdata('email')])->row_array();
-        $data['students'] = $this->M_students->get_data();
         if ($this->session->userdata('email')) {
-            $this->template->load('template', 'siswa', $data);
+            redirect('C_siswa');
         }else{
             redirect('C_login');
         }
