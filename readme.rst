@@ -1,29 +1,38 @@
 ###################
-What is CodeIgniter
+SISTEM PENGEMBANGAN INFORMASI AKADEMIK | PEMROGAMAN FRAMEWORK KEL 5
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Aplikasi Sistem Informasi Nilai Akademik berbasis website yang akan dibuat ini nantinya
+akan berfokus bagaimana caranya agar aplikasi ini dapat memudahkan para siswa, walisiswa ataupun
+akademisi dalam melihat dan mengelola data mengenai nilai akademik siswa di sekolah tanpa harus
+melakukan interaksi secara langsung.
 
 *******************
-Release Information
+Cara Penggunaan
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+1. Git Clone `My Repo <https://github.com/fiqq/Fp_Framework/>`_.
+2. Import File Db di folder Db ke Localhost Database
+3. Masukkan Semua Folder ke dalam Folder Xampp/Htdocs (Tergantung pakai apa)
+4. Run dengan Mengetikkan Alamat Direktori Folder Localhost://Fp_Framewok(Example)
+
+
 
 **************************
-Changelog and New Features
+TESTING USER 
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+1. admin
+user : 18081010073.b@gmail.com 
+pass : 12345678
+2. guru
+user : teacher00987654@schoolemail.com
+pass : belanegara
+3. siswa
+user : student4172@schoolemail.com
+pass : belanegara
+
+
 
 *******************
 Server Requirements
@@ -35,19 +44,7 @@ It should work on 5.3.7 as well, but we strongly advise you NOT to run
 such old versions of PHP, because of potential security and performance
 issues, as well as missing features.
 
-************
-Installation
-************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
 
 *********
 Resources
